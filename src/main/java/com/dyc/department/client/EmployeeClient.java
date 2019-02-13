@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.dyc.department.model.Employee;
 
-@FeignClient(name = "employee-service")
+@FeignClient(name = "employee-service", fallback = EmployeeClientHystrix.class)
 public interface EmployeeClient {
 
-	@GetMapping("/department/{departmentId}")
-	List<Employee> findByDepartment(@PathVariable("departmentId") Long departmentId);
-	
+    @GetMapping("/department/{departmentId}")
+    List<Employee> findByDepartment(@PathVariable("departmentId") Long departmentId);
+
 }
