@@ -1,5 +1,17 @@
+server:
+  port: 3333
 spring:
   application:
     name: department-service
   profiles:
     active: ${env}
+
+#admin client config
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: "*"
