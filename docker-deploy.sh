@@ -3,6 +3,8 @@ serviceName="department-service"
 
 BUILD_NUMBER=$1
 run_num=$2
+deployIp=$3
+env=$4
 
 #get rand port
 randPort(){
